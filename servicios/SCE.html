@@ -1,46 +1,146 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mi página sencilla</title>
-  <style>
-    /* Estilos minimalistas */
-    body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; background:#f7f7f7; }
-    header { background:#4b8beb; color:white; padding:16px; border-radius:8px; }
-    main { margin-top:16px; background:white; padding:16px; border-radius:8px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
-    button { padding:8px 12px; border:none; border-radius:6px; cursor:pointer; }
-    footer { margin-top:12px; color:#555; font-size:0.9rem; }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calificaciones del Alumno</title>
+  <!-- Enlace al CSS en la raíz -->
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-
+  <!-- Header -->
   <header>
-    <h1>Bienvenido a mi página</h1>
-    <p>Un ejemplo muy sencillo en HTML, CSS y un poco de JavaScript.</p>
+    <div class="container header-content">
+      <div class="logo">
+        <i>🎓</i> MiTec
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="#">Mis Materias</a></li>
+          <li><a href="#">Calificaciones</a></li>
+          <li><a href="#">Perfil</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu">☰</div>
+    </div>
   </header>
 
-  <main>
-    <h2>Sobre esta página</h2>
-    <p>Esta es una plantilla mínima para empezar. Puedes cambiar el texto, los estilos y añadir más secciones.</p>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Bienvenido, <span id="nombre-alumno">Ana López</span></h1>
+      <p>Aquí puedes consultar tus calificaciones de este semestre.</p>
+    </div>
+  </section>
 
-    <h3>Interacción</h3>
-    <p id="mensaje">Haz clic en el botón para ver una acción en JavaScript.</p>
-    <button id="miBoton">Haz clic aquí</button>
-  </main>
+  <!-- Datos del Alumno -->
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>Datos del Alumno</h2>
+      </div>
+      <div class="table-container">
+        <table class="grades-table">
+          <tbody>
+            <tr>
+              <th>Matrícula</th>
+              <td>2025A123</td>
+            </tr>
+            <tr>
+              <th>Nombre</th>
+              <td>Ana López</td>
+            </tr>
+            <tr>
+              <th>Carrera</th>
+              <td>Ingeniería en Sistemas Computacionales</td>
+            </tr>
+            <tr>
+              <th>Semestre</th>
+              <td>9°</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 
+  <!-- Calificaciones -->
+  <section id="tabla">
+    <div class="container">
+      <div class="section-title">
+        <h2>Mis Calificaciones</h2>
+      </div>
+      <div class="table-container">
+        <table class="grades-table">
+          <thead>
+            <tr>
+              <th>Materia</th>
+              <th>Parcial 1</th>
+              <th>Parcial 2</th>
+              <th>Final</th>
+              <th>Promedio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Matemáticas</td>
+              <td>85</td>
+              <td>90</td>
+              <td>88</td>
+              <td>87.6</td>
+            </tr>
+            <tr>
+              <td>Historia</td>
+              <td>78</td>
+              <td>82</td>
+              <td>80</td>
+              <td>80.0</td>
+            </tr>
+            <tr>
+              <td>Inglés</td>
+              <td>92</td>
+              <td>95</td>
+              <td>94</td>
+              <td>93.6</td>
+            </tr>
+            <tr>
+              <td>Programación</td>
+              <td>88</td>
+              <td>91</td>
+              <td>90</td>
+              <td>89.6</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>© 2025 — Página demo</p>
+    <div class="container footer-content">
+      <div class="footer-column">
+        <h3>MiTec</h3>
+        <p>Consulta tus calificaciones y mantente informado sobre tu avance académico.</p>
+      </div>
+      <div class="footer-column">
+        <h3>Enlaces rápidos</h3>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="#">Materias</a></li>
+          <li><a href="#">Perfil</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Contacto</h3>
+        <p>Email: soporte@mitec.edu.mx</p>
+        <p>Tel: +52 123 456 7890</p>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2025 MiTec - Todos los derechos reservados
+    </div>
   </footer>
-
-  <script>
-    // JavaScript simple: cambia el texto cuando se clickea el botón
-    document.getElementById('miBoton').addEventListener('click', function() {
-      const p = document.getElementById('mensaje');
-      const hora = new Date().toLocaleTimeString();
-      p.textContent = '¡Botón clickeado a las ' + hora + '! Puedes modificar este comportamiento.';
-    });
-  </script>
-
 </body>
 </html>
