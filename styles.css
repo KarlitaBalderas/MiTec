@@ -527,3 +527,72 @@ footer {
         padding: 12px 25px;
     }
 }
+
+/* Estilos para los menús desplegables */
+nav ul li {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 1000;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f5f5f5;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Estilos para la flecha indicadora */
+.dropdown > a i {
+    margin-left: 5px;
+    font-size: 0.8em;
+    transition: transform 0.3s;
+}
+
+.dropdown:hover > a i {
+    transform: rotate(180deg);
+}
+
+/* Estilos para móviles */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        display: none;
+        background-color: #f9f9f9;
+    }
+    
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+    
+    .dropdown > a i {
+        float: right;
+        margin-top: 5px;
+    }
+}
