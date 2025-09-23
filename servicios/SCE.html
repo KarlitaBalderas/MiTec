@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mi página sencilla</title>
+  <style>
+    /* Estilos minimalistas */
+    body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; background:#f7f7f7; }
+    header { background:#4b8beb; color:white; padding:16px; border-radius:8px; }
+    main { margin-top:16px; background:white; padding:16px; border-radius:8px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
+    button { padding:8px 12px; border:none; border-radius:6px; cursor:pointer; }
+    footer { margin-top:12px; color:#555; font-size:0.9rem; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Bienvenido a mi página</h1>
+    <p>Un ejemplo muy sencillo en HTML, CSS y un poco de JavaScript.</p>
+  </header>
+
+  <main>
+    <h2>Sobre esta página</h2>
+    <p>Esta es una plantilla mínima para empezar. Puedes cambiar el texto, los estilos y añadir más secciones.</p>
+
+    <h3>Interacción</h3>
+    <p id="mensaje">Haz clic en el botón para ver una acción en JavaScript.</p>
+    <button id="miBoton">Haz clic aquí</button>
+  </main>
+
+  <footer>
+    <p>© 2025 — Página demo</p>
+  </footer>
+
+  <script>
+    // JavaScript simple: cambia el texto cuando se clickea el botón
+    document.getElementById('miBoton').addEventListener('click', function() {
+      const p = document.getElementById('mensaje');
+      const hora = new Date().toLocaleTimeString();
+      p.textContent = '¡Botón clickeado a las ' + hora + '! Puedes modificar este comportamiento.';
+    });
+  </script>
+
+</body>
+</html>
