@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portal Alumno - ITSZN</title>
+  <!-- ENLACE A TU HOJA DE ESTILOS (ubicada en la raíz MiTec/styles.css) -->
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* Ajustes locales mínimos para layout tipo Moodle */
+    .dashboard {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 24px;
+      margin-top: 20px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .course-card {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      padding: 12px;
+      border-radius: 8px;
+      background: linear-gradient(90deg, rgba(26,58,108,0.04), rgba(42,77,126,0.02));
+      margin-bottom: 12px;
+    }
+
+    .course-thumb {
+      width: 120px;
+      height: 68px;
+      border-radius: 6px;
+      background: linear-gradient(135deg,#6b63ff,#4aa3ff);
+      flex-shrink: 0;
+    }
+
+    .progress {
+      height: 8px;
+      background: var(--medium-gray);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .progress > i {
+      display: block;
+      height: 100%;
+      background: var(--accent-orange);
+    }
+
+    .sidebar .small-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px dashed rgba(0,0,0,0.05);
+    }
+
+    .online-dot {
+      width:10px; height:10px; border-radius:50%;
+      background: #26c281; display:inline-block; margin-right:8px;
+    }
+
+    @media (max-width: 900px) {
+      .dashboard {
+        grid-template-columns: 1fr;
+      }
+      header { position: static; }
+      .hero { padding-top: 130px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-content">
+      <div class="logo"><i>📚</i> ITSZN</div>
+
+      <nav>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="#">Cursos</a></li>
+          <li><a href="#">Tareas</a></li>
+          <li><a href="#">Foro</a></li>
+        </ul>
+      </nav>
+
+      <div class="mobile-menu">☰</div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Bienvenido, <span id="alumno-nombre">Alumno</span></h1>
+      <p>Panel del estudiante — revisa cursos, tareas, archivos y actividades pendientes.</p>
+    </div>
+  </section>
+
+  <!-- Contenido principal -->
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>Panel del Alumno</h2>
+      </div>
+
+      <div class="dashboard">
+        <!-- COLUMNA PRINCIPAL -->
+        <div>
+          <!-- Cursos accedidos recientemente -->
+          <div class="panel">
+            <h3 style="margin-top:0">Cursos accedidos recientemente</h3>
+
+            <div class="course-card">
+              <div class="course-thumb" aria-hidden="true"></div>
+              <div style="flex:1">
+                <strong>Frameworks Web 9A</strong>
+                <div style="font-size:.9rem;color:var(--dark-gray)">Ingeniería en Sistemas Computacionales</div>
+                <div class="progress" aria-hidden="true"><i style="width:40%"></i></div>
+                <div style="font-size:.85rem;margin-top:6px;color:var(--text-dark)">40% completado</div>
+              </div>
+            </div>
+
+            <div class="course-card">
+              <div class="course-thumb" aria-hidden="true" style="background: linear-gradient(135deg,#2a7bd6,#2a4d7e)"></div>
+              <div style="flex:1">
+                <strong>DevOps (9ISC 2025)</strong>
+                <div style="font-size:.9rem;color:var(--dark-gray)">Ingeniería en Sistemas Computacionales</div>
+                <div class="progress"><i style="width:20%"></i></div>
+                <div style="font-size:.85rem;margin-top:6px;color:var(--text-dark)">20% completado</div>
+              </div>
+            </div>
+
+            <div class="course-card">
+              <div class="course-thumb" aria-hidden="true" style="background: linear-gradient(135deg,#8a67ff,#6b63ff)"></div>
+              <div style="flex:1">
+                <strong>Actualización de Datos TecNM</strong>
+                <div style="font-size:.9rem;color:var(--dark-gray)">TecNM Cursos en General</div>
+                <div class="progress"><i style="width:100%"></i></div>
+                <div style="font-size:.85rem;margin-top:6px;color:var(--text-dark)">100% completado</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Línea de tiempo / Tareas recientes -->
+          <div class="panel" style="margin-top:18px">
+            <h3 style="margin-top:0">Línea de tiempo</h3>
+            <ul style="list-style:none;padding:0;margin:0">
+              <li style="padding:10px 0;border-bottom:1px solid #f0f0f0">
+                <strong>Entrega: Informe DevOps</strong><br>
+                <small style="color:var(--dark-gray)">Vence: 29 Sep 2025</small>
+              </li>
+              <li style="padding:10px 0;border-bottom:1px solid #f0f0f0">
+                <strong>Foro: Prácticas de Frameworks</strong><br>
+                <small style="color:var(--dark-gray)">Respuesta pendiente</small>
+              </li>
+              <li style="padding:10px 0">
+                <strong>Tarea: Examen Parcial Matemáticas</strong><br>
+                <small style="color:var(--dark-gray)">Calificada</small>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Actividades/Recursos del curso (simulado) -->
+          <div class="panel" style="margin-top:18px">
+            <h3 style="margin-top:0">Mis cursos — recursos</h3>
+
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
+              <div style="background:var(--light-blue);padding:12px;border-radius:8px">
+                <strong>Frameworks Web</strong>
+                <p style="margin:.5rem 0 .25rem;color:var(--dark-gray)">Lectura: Componentes</p>
+                <a class="btn-small" href="#">Abrir</a>
+              </div>
+
+              <div style="background:var(--light-blue);padding:12px;border-radius:8px">
+                <strong>DevOps</strong>
+                <p style="margin:.5rem 0 .25rem;color:var(--dark-gray)">Tarea: CI/CD</p>
+                <a class="btn-small" href="#">Abrir</a>
+              </div>
+
+              <div style="background:var(--light-blue);padding:12px;border-radius:8px">
+                <strong>Inglés</strong>
+                <p style="margin:.5rem 0 .25rem;color:var(--dark-gray)">Quiz disponible</p>
+                <a class="btn-small" href="#">Abrir</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+          <div class="panel sidebar-section">
+            <h4 style="margin-top:0">Archivos privados</h4>
+            <ul class="small-list" style="padding-left:0;margin:0">
+              <li><span>Tareas.pptx</span> <a href="#" class="btn-small">Descargar</a></li>
+              <li><span>actividad1.pdf</span> <a href="#" class="btn-small">Descargar</a></li>
+            </ul>
+          </div>
+
+          <div class="panel sidebar-section" style="margin-top:14px">
+            <h4 style="margin-top:0">Usuarios en línea</h4>
+            <ul style="list-style:none;padding:0;margin:0">
+              <li style="padding:8px 0"><span class="online-dot" aria-hidden="true"></span> Antonio Cardoza Almaraz</li>
+              <li style="padding:8px 0"><span style="width:10px;height:10px;border-radius:50%;background:#f8c471;display:inline-block;margin-right:8px"></span> Yaritza Vazquez</li>
+              <li style="padding:8px 0"><span style="width:10px;height:10px;border-radius:50%;background:#f8c471;display:inline-block;margin-right:8px"></span> Joel Limones</li>
+            </ul>
+          </div>
+
+          <div class="panel sidebar-section" style="margin-top:14px">
+            <h4 style="margin-top:0">Atajos</h4>
+            <ul style="list-style:none;padding:0;margin:0">
+              <li><a href="#">Perfil</a></li>
+              <li><a href="#">Mis calificaciones</a></li>
+              <li><a href="#">Soporte</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-column">
+        <h3>Acerca de</h3>
+        <p>Portal de ejemplo tipo Moodle, diseñado para la vista del alumno.</p>
+      </div>
+      <div class="footer-column">
+        <h3>Contacto</h3>
+        <p>soporte@itszn.edu.mx</p>
+      </div>
+      <div class="footer-column">
+        <h3>Enlaces</h3>
+        <ul>
+          <li><a href="#">Documentación</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">© 2025 ITSZN</div>
+  </footer>
+</body>
+</html>
