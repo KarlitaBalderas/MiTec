@@ -65,6 +65,52 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Manejo de menús desplegables en móviles
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    const mobileMenuBtn = document.querySelector('.mobile-menu');
+    const nav = document.querySelector('nav');
+    
+    // Toggle para menús desplegables en móviles
+    if (window.innerWidth <= 768) {
+        dropdowns.forEach(dropdown => {
+            const link = dropdown.querySelector('a');
+            link.addEventListener('click', function(e) {
+                if (this.parentElement.classList.contains('dropdown')) {
+                    e.preventDefault();
+                    this.parentElement.classList.toggle('active');
+                }
+            });
+        });
+    }
+    
+    // Toggle para el menú móvil
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', function() {
+            nav.classList.toggle('active');
+        });
+    }
+    
+    // Cerrar menús al hacer clic fuera de ellos
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('nav')) {
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        }
+    });
+    
+    // Ajustar el margen superior del hero section según la altura del header
+    function adjustHeroMargin() {
+        const headerHeight = document.querySelector('header').offsetHeight;
+        document.querySelector('.hero').style.marginTop = headerHeight + 'px';
+    }
+    
+    // Ejecutar al cargar y al redimensionar la ventana
+    adjustHeroMargin();
+    window.addEventListener('resize', adjustHeroMargin);
+});
+
 window.addEventListener('scroll', fadeInOnScroll);
 // Ejecutar una vez al cargar la página
 fadeInOnScroll();

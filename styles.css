@@ -596,3 +596,143 @@ nav ul li {
         margin-top: 5px;
     }
 }
+
+/* Estilos para el logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-image img {
+    height: 60px;
+    width: auto;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.institution-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2c3e50;
+    line-height: 1.2;
+}
+
+.campus-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e74c3c;
+    line-height: 1.1;
+}
+
+/* Estilos para el header */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+/* Estilos para los menús desplegables */
+nav ul li {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 1000;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f5f5f5;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Estilos para la flecha indicadora */
+.dropdown > a i {
+    margin-left: 5px;
+    font-size: 0.8em;
+    transition: transform 0.3s;
+}
+
+.dropdown:hover > a i {
+    transform: rotate(180deg);
+}
+
+/* Estilos para móviles */
+@media (max-width: 768px) {
+    .logo {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+    
+    .logo-image img {
+        height: 50px;
+    }
+    
+    .institution-name {
+        font-size: 12px;
+    }
+    
+    .campus-name {
+        font-size: 20px;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        display: none;
+        background-color: #f9f9f9;
+    }
+    
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+    
+    .dropdown > a i {
+        float: right;
+        margin-top: 5px;
+    }
+}
+
+/* Ajuste del hero section para el header fijo */
+.hero {
+    margin-top: 100px; /* Ajusta según la altura de tu header */
+}
