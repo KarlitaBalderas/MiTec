@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directorio - Instituto Tecnológico</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #1a3a8f 0%, #2a5caa 100%);
+            color: white;
+        }
+        
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            padding: 20px;
+        }
+        
+        .directorio-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            min-width: 800px;
+        }
+        
+        .directorio-table th {
+            background-color: #2a5caa;
+            color: white;
+            font-weight: 600;
+            text-align: center;
+            padding: 15px 10px;
+            font-size: 1rem;
+            border: 1px solid #1a3a8f;
+        }
+        
+        .directorio-table td {
+            padding: 12px 10px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+            border-right: 1px solid #f0f0f0;
+        }
+        
+        .directorio-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .directorio-table tr:hover {
+            background-color: #eef5ff;
+        }
+        
+        .directorio-table a {
+            color: #2a5caa;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        .directorio-table a:hover {
+            color: #1a3a8f;
+            text-decoration: underline;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f0f2f5;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            header p {
+                font-size: 1rem;
+            }
+            
+            .directorio-table {
+                font-size: 0.9rem;
+            }
+            
+            .directorio-table th, 
+            .directorio-table td {
+                padding: 10px 5px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                border-radius: 0;
+            }
+            
+            header {
+                padding: 20px 10px;
+            }
+            
+            .table-container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>DIRECTORIO INSTITUCIONAL</h1>
+            <p>Instituto Tecnológico Superior de Zacatecas Norte</p>
+        </header>
+        
+        <main>
+            <div class="table-container">
+                <table class="directorio-table">
+                    <thead>
+                        <tr>
+                            <th>Cargo</th>
+                            <th>Sujeto Obligado</th>
+                            <th>Teléfono</th>
+                            <th>Extensión</th>
+                            <th>Correo Electrónico</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Director General</td>
+                            <td></td>
+                            <td>498 488 30 02</td>
+                            <td>1000</td>
+                            <td><a href="mailto:itszndirecciongeneral@gmail.com">itszndirecciongeneral@gmail.com</a></td>
+                        </tr>
+                        <tr>
+                            <td>Subdirectora de Planeación</td>
+                            <td>Ing. Yahaira Tanairi Jiménez Reyes</td>
+                            <td>498 488 30 02</td>
+                            <td>1006</td>
+                            <td><a href="mailto:planeacion@itszn.edu.mx">planeacion@itszn.edu.mx</a></td>
+                        </tr>
+                        <tr>
+                            <td>Director Académico</td>
+                            <td>I.S.C. Jairo Isaac Lira Leyva</td>
+                            <td>498 488 30 02</td>
+                            <td>1005</td>
+                            <td><a href="mailto:dir.acad@itszn.edu.mx">dir.acad@itszn.edu.mx</a></td>
+                        </tr>
+                        <tr>
+                            <td>Director de Planeación y Vinculación</td>
+                            <td>Lic. Pedro Muro Zúñiga</td>
+                            <td>498 488 30 02</td>
+                            <td>1013</td>
+                            <td><a href="mailto:vinculacion@itszn.edu.mx">vinculacion@itszn.edu.mx</a></td>
+                        </tr>
+                        <tr>
+                            <td>Jefa del Departamento de Servicios Escolares</td>
+                            <td>C.P. Elvia Alvarado Díaz</td>
+                            <td>498 488 30 02</td>
+                            <td>1010</td>
+                            <td><a href="mailto:serv_escolar@itszn.edu.mx">serv_escolar@itszn.edu.mx</a></td>
+                        </tr>
+                        <tr>
+                            <td>Jefa de Div. de Ing. en Sistemas y TIC</td>
+                            <td>L.I. Mónica Hernández Solís</td>
+                            <td>498 488 30 02</td>
+                            <td>1011</td>
+                            <td><a href="mailto:div_jisc@itszn.edu.mx">div_jisc@itszn.edu.mx</a></td>
+                        </tr>
+                        <tr>
+                            <td>Jefa de Div. de Ing. en Admón. e Ing. Gestión Emp.</td>
+                            <td>L.A. Alma Rosa Pizarro Barrientos</td>
+                            <td>498 488 30 02</td>
+                            <td>1003</td>
+                            <td><a href="mailto:div_ja@itszn.edu.mx">div_ja@itszn.edu.mx</a></td>
+                        </tr>
+                        <tr>
+                            <td>Jefe de División de Contador Público</td>
+                            <td>L.C. José Antonio Ramírez Silva</td>
+                            <td>498 488 30 02</td>
+                            <td>1004</td>
+                            <td><a href="mailto:div_cp@itszn.edu.mx">div_cp@itszn.edu.mx</a></td>
+                        </tr>
+                        <tr>
+                            <td>Jefe de Div. de Ing. en Industrias Alimentarias</td>
+                            <td>Ing. José Mancillas Medina</td>
+                            <td>498 488 30 02</td>
+                            <td>1021</td>
+                            <td><a href="mailto:div_ija@itszn.edu.mx">div_ija@itszn.edu.mx</a></td>
+                        </tr>
+                        <tr>
+                            <td>Jefe de División de Ingeniería Electromecánica</td>
+                            <td>Ing. Sandrac Abimael Castruita Pérez</td>
+                            <td>498 488 30 02</td>
+                            <td>1019</td>
+                            <td><a href="mailto:div_iem@itszn.edu.mx">div_iem@itszn.edu.mx</a></td>
+                        </tr>
+                        <tr>
+                            <td>Subdirección de Posgrado e Investigación</td>
+                            <td>L.I. Abraham Esquivel Salas</td>
+                            <td>498 488 30 02</td>
+                            <td>1008</td>
+                            <td><a href="mailto:inovacion_calidad@itszn.edu.mx">inovacion_calidad@itszn.edu.mx</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 Instituto Tecnológico Superior de Zacatecas Norte. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>
