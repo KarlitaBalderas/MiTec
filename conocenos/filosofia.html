@@ -1,17 +1,153 @@
-<!doctype html>
+<!doctype html> 
 <html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Filosofía - Instituto Tecnológico Superior Zacatecas Norte</title>
-  <!-- Vinculo para agregar el estilo -->
-  <link rel="stylesheet" href="../styles.css">
+
+  <style>
+    /* ====== ESTILOS GENERALES ====== */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f6f9; /* gris claro */
+      color: #333;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h1, h2, h3 {
+      color: #2a5caa; /* azul */
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    /* ====== ENCABEZADO ====== */
+    .site-header {
+      background: #2a5caa;
+      color: #fff;
+      padding: 30px 20px;
+      text-align: center;
+      border-bottom: 5px solid #1e3f73;
+    }
+
+    .site-header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+
+    .tagline {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      color: #e0e0e0;
+    }
+
+    /* ====== BOTÓN DE REGRESAR ====== */
+    .btn-regresar {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #ffffff;
+      color: #2a5caa;
+      border: 2px solid #2a5caa;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn-regresar:hover {
+      background: #2a5caa;
+      color: #ffffff;
+    }
+
+    /* ====== SECCIONES ====== */
+    main {
+      margin: 40px 0;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .card h2 {
+      border-bottom: 2px solid #2a5caa;
+      padding-bottom: 8px;
+      margin-bottom: 15px;
+    }
+
+    /* ====== GRID DE VALORES ====== */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .value {
+      background: #f9fbfd;
+      border: 1px solid #d9e2ec;
+      padding: 15px;
+      border-radius: 6px;
+      transition: transform 0.3s;
+    }
+
+    .value:hover {
+      transform: translateY(-5px);
+      border-color: #2a5caa;
+    }
+
+    /* ====== ENLACES RÁPIDOS ====== */
+    .quick-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .quick-links li {
+      margin: 8px 0;
+    }
+
+    .quick-links a {
+      text-decoration: none;
+      color: #2a5caa;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .quick-links a:hover {
+      color: #1e3f73;
+    }
+
+    /* ====== FOOTER ====== */
+    .site-footer {
+      background: #2a5caa;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    .site-footer p {
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
     <div class="container">
       <h1>Filosofía del Instituto Tecnológico Superior Zacatecas Norte</h1>
       <p class="tagline">Formando profesionistas con perspectiva global, inclusión y compromiso social.</p>
+      <!-- Botón de regreso -->
+      <button class="btn-regresar" onclick="window.location.href='../index.html'">⬅ Inicio</button>
     </div>
   </header>
 
@@ -62,16 +198,6 @@
       <h2>Compromiso Institucional</h2>
       <p>Promovemos la inclusión, la sustentabilidad, la innovación y el emprendimiento como ejes transversales en la formación profesional, la investigación y la vinculación con la comunidad.</p>
     </section>
-
-    <aside class="card quick-links">
-      <h3>Enlaces útiles</h3>
-      <ul>
-        <li><a href="#mision">Ir a Misión</a></li>
-        <li><a href="#vision">Ir a Visión</a></li>
-        <li><a href="#valores">Ir a Valores</a></li>
-        <li><a href="#compromiso">Ir a Compromiso</a></li>
-      </ul>
-    </aside>
   </main>
 
   <footer class="site-footer">
