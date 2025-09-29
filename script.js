@@ -158,6 +158,103 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', adjustHeroMargin);
 });
 
+// Carrusel de galería
+function initGallery() {
+    const slider = document.querySelector('.gallery-slider');
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const dotsContainer = document.querySelector('.gallery-dots');
+    
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    
+    // Crear dots
+    slides.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+    
+    const dots = document.querySelectorAll('.dot');
+    
+    function goToSlide(slideIndex) {
+        currentSlide = slideIndex;
+        updateSlider();
+    }
+    
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlider();
+    }
+    
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlider();
+    }
+    
+    function updateSlider() {
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        // Actualizar dots
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
+    }
+    
+    // Event listeners
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    
+    // Auto slide cada 5 segundos
+    let autoSlide = setInterval(nextSlide, 5000);
+    
+    // Pausar auto slide al hover
+    galleryContainer.addEventListener('mouseenter', () => {
+        clearInterval(autoSlide);
+    });
+    
+    galleryContainer.addEventListener('mouseleave', () => {
+        autoSlide = setInterval(nextSlide, 5000);
+    });
+    
+    // Touch events para móviles
+    let startX = 0;
+    let endX = 0;
+    
+    slider.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
+    
+    slider.addEventListener('touchend', (e) => {
+        endX = e.changedTouches[0].clientX;
+        handleSwipe();
+    });
+    
+    function handleSwipe() {
+        const diff = startX - endX;
+        if (Math.abs(diff) > 50) { // Mínimo swipe de 50px
+            if (diff > 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        }
+    }
+}
+
+// Inicializar galería cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', function() {
+    // ... tu código existente ...
+    
+    // Inicializar galería si existe
+    if (document.querySelector('.gallery-slider')) {
+        initGallery();
+    }
+});
+
 window.addEventListener('scroll', fadeInOnScroll);
 // Ejecutar una vez al cargar la página
 fadeInOnScroll();
