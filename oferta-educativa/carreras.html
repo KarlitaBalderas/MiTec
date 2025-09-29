@@ -1,0 +1,531 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tecnológico Nacional de México Zacatecas Norte - Oferta Educativa</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f8f9fa; margin:0; }
+    .hero-header { background: linear-gradient(135deg, #1a3a5f 0%, #2c5a8a 100%); color:white; text-align:center; padding:2rem; }
+    .main-title { font-size:2rem; margin:0; }
+    .container { max-width:1200px; margin:auto; padding:2rem; }
+    .careers-container { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.5rem; }
+    .career-card { background:white; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); overflow:hidden; border-top:4px solid #3498db; }
+    .career-image { width:100%; height:200px; object-fit:cover; }
+    .career-info { padding:1rem; }
+    .career-title { font-size:1.3rem; color:#2c3e50; margin-bottom:.5rem; }
+    .career-description { color:#555; margin-bottom:1rem; }
+    .more-btn { background:#3498db; color:#fff; border:none; padding:10px 15px; border-radius:5px; cursor:pointer; font-weight:bold; margin-bottom:1rem; }
+    .more-btn:hover { background:#2980b9; }
+    .more-info { display:none; border-top:1px solid #ddd; padding-top:1rem; }
+    .info-block { margin-bottom:1.5rem; }
+    .info-block h4 { margin-bottom:.5rem; color:#2c3e50; }
+    .info-block p { margin-bottom:.5rem; color:#444; }
+    .info-block img { max-width:100%; border-radius:8px; margin-top:.5rem; }
+
+    /* Nuevos estilos para el plan de estudios mejorado */
+    .semester-tabs { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:1rem; }
+    .semester-tab { padding:8px 15px; background:#e0e0e0; border:none; border-radius:5px; cursor:pointer; font-size:0.9rem; transition:all 0.3s; }
+    .semester-tab:hover { background:#d0d0d0; }
+    .semester-tab.active { background:#3498db; color:white; }
+    .semester-content { display:none; }
+    .semester-content.active { display:block; }
+    .plan-estudios table { width:100%; border-collapse:collapse; background:#fdfdfd; border:1px solid #ccc; border-radius:8px; overflow:hidden; margin-bottom:1rem; }
+    .plan-estudios caption { background:#3498db; color:white; font-weight:bold; padding:8px; font-size:1.1rem; }
+    .plan-estudios th, .plan-estudios td { border:1px solid #ccc; padding:10px; text-align:left; }
+    .plan-estudios th { background:#f0f0f0; font-weight:600; }
+    .plan-estudios tr:nth-child(even) { background:#f9f9f9; }
+
+    footer { background:#2c3e50; color:white; text-align:center; padding:1rem; margin-top:2rem; }
+    .back-button { position:fixed; top:20px; left:20px; background:#3498db; color:white; border:none; padding:10px 15px; border-radius:30px; cursor:pointer; font-weight:bold; }
+  </style>
+</head>
+<body>
+  <button class="back-button" onclick="window.location.href='../index.html'">← Regresar</button>
+
+  <header class="hero-header">
+    <h1 class="main-title">FORMANDO PROFESIONISTAS DE EXCELENCIA</h1>
+    <p>Oferta Educativa 2025</p>
+  </header>
+
+  <div class="container">
+    <h2 style="text-align:center; margin-bottom:1.5rem;">Nuestras Carreras</h2>
+    <div class="careers-container">
+
+      <!-- Carrera 1: Gestión Empresarial -->
+      <div class="career-card">
+        <img src="../img/gestion-empresarial.png" class="career-image" alt="Ingeniería en Gestión Empresarial">
+        <div class="career-info">
+          <h2 class="career-title">Ingeniería en Gestión Empresarial</h2>
+          <p class="career-description">La Ingeniería en Gestión Empresarial posee un enfoque integral dentro de la organización, 
+            esto ​se traduce en un alcance transversal a todas las áreas de ésta. Contribuye a la gestión e innovación de procesos; 
+            así como al diseño, implementación y desarrollo de sistemas estratégicos de negocios, 
+            optimizando recursos en un entorno global, con ética y responsabilidad social..</p>
+          <button class="more-btn">Más información</button>
+          <div class="more-info">
+            <div class="info-block">
+              <h4>¿Cómo se identifica un ingeniero en Gestion Empresarial?</h4>
+              <p>Se identifica por su capacidad de optimizar procesos administrativos y productivos.</p>
+              <img src="../img/comoseidenti-IGE.png" alt="Identificación Gestión">
+            </div>
+            <div class="info-block">
+              <h4>¿Qué hace un ingeniero Gestion Empresarial?</h4>
+              <p>El Ingeniero en Gestión Empresarial puede desempeñar eficientemente funciones derivadas del área de producción, 
+                calidad, finanzas, recursos humanos, mercadotecnia y auditoría, asimismo puede fungir como asesor o consultor de empresas,
+                 encargarse de la administración y gestión de instituciones públicas y privadas. además de diseñar productos.
+                Gestiona sistemas integrales de calidad, ejerciendo un liderazgo efectivo y 
+                un compromiso ético, aplicando las herramientas básicas de la ingeniería.</p>
+              <img src="../img/QuehaceIGE.png" alt="Funciones Gestión">
+            </div>
+            <div class="info-block">
+              <h4>Perfil de egreso</h4>
+              <p>Profesional con habilidades en liderazgo, planeación estratégica, innovación y toma de decisiones.</p>
+              <img src="../img/perfildeEgreso.png" alt="Perfil egreso Gestión">
+            </div>
+            <div class="info-block">
+              <h4>Plan de estudios</h4>
+              <div class="plan-estudios">
+                <div class="semester-tabs" id="gestion-tabs">
+                  <!-- Las pestañas se generarán con JavaScript -->
+                </div>
+                <div class="semester-contents" id="gestion-contents">
+                  <!-- Los contenidos se generarán con JavaScript -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carrera 2: Administración -->
+      <div class="career-card">
+        <img src="../img/AdminPrin.png" class="career-image" alt="Ingeniería en Administración">
+        <div class="career-info">
+          <h2 class="career-title">Ingeniería en Administración</h2>
+          <p class="career-description">La Ingeniería en Administración es una de las ciencias que más ramas 
+            y divisiones posee, por lo que mantiene un amplio campo laboral y es catalogada como una de 
+            las ingenierías con mayor demanda en el mundo del comercio..</p>
+          <button class="more-btn">Más información</button>
+          <div class="more-info">
+            <div class="info-block">
+              <h4>¿Cómo se identifica un ingeniero en Administracion?</h4>
+              <img src="../img/comoseidenti-IGE.png" alt="Identificación Administración">
+            </div>
+            <div class="info-block">
+              <h4>¿Qué hace un ingeniero en Administracion?</h4>
+              <p> Genera, desarrolla e innova empresas competitivas para la transformación económica y social.
+                Toma decisiones en las empresas, con el objeto de minimizar riesgos.empresa.
+                Utiliza eficientemente las tecnologías de la información y comunicación para optimizar los procesos y recursos en su práctica profesional.
+                Planea, organiza, integra y dirige equipos de trabajo.
+                Aplica habilidades directivas para el logro de los objetivos organizacionales.
+                 Promueve sistemas de calidad para el proceso de mejora continua en las empresas.</p>
+              <img src="../img/QuehaceIGE.png" alt="Funciones Administración">
+            </div>
+            <div class="info-block">
+              <h4>Perfil de egreso</h4>
+              <p>Dentro de las capacidades, los conocimientos y habilidades que debe haber adquirido 
+                el estudiante al finalizar la Ingeniería en Administración serán:</p>
+              <img src="../img/PerfilEgresoAdmin.png" alt="Perfil egreso Administración">
+            </div>
+            <div class="info-block">
+              <h4>Plan de estudios</h4>
+              <div class="plan-estudios">
+                <div class="semester-tabs" id="admin-tabs">
+                  <!-- Las pestañas se generarán con JavaScript -->
+                </div>
+                <div class="semester-contents" id="admin-contents">
+                  <!-- Los contenidos se generarán con JavaScript -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carrera 3: Sistemas Computacionales -->
+      <div class="career-card">
+        <img src="../img/PrinSistemas.png" class="career-image" alt="Ingeniería en Sistemas Computacionales">
+        <div class="career-info">
+          <h2 class="career-title">Ingeniería en Sistemas Computacionales</h2>
+          <p class="career-description">La Ingeniería en Sistemas Computacionales crece de manera exponencial en 
+            el ámbito laboral dado que se forman profesionistas lídereres, analíticos, críticos y creativos con visión estratégica 
+            y amplio sentido ético, con capacidades de diseñar, implementar y administrar infraestructuras computacionales 
+            para aportar soluciones innovadoras en un contexto global, multidisciplinario y sustentable..</p>
+          <button class="more-btn">Más información</button>
+          <div class="more-info">
+            <div class="info-block">
+              <h4>¿Cómo se identifica un ingeniero en Sistemas Computacionales?</h4>
+              <p>Por su dominio en programación, redes y nuevas tecnologías.</p>
+              <img src="../img/identificacionSistemas.png" alt="Identificación Sistemas">
+            </div>
+            <div class="info-block">
+              <h4>¿Qué hace un ingeniero en Sistemas Computacionales?</h4>
+              <p>Se desarrolla como líder capaz de planear, organizar dirigir y controlar una serie de actividades realizadas por un grupo de investigación y 
+                desarrollo de sistemas.Estar a cargo de todos los servicios informáticos de una compañía, 
+                así como la infraestructura tecnológica, técnica y humana que los hacen posibles.
+                Desarrollar, operar y controlar sistemas informáticos.Administrar servicios informáticos. 
+                Responsabilizandose de la provisión de servicios informáticos o tele-informáticos que sirven 
+                de base a la labor de una organización. Es capaz no solamente de mantener en funcionamiento la infraestructura requerida para esto, 
+                sino también de coordinar un adecuado mantenimiento y renovación de equipos y sistemas computacionales de base.
+                Implementar distintos tipos de redes, protocolos y esquemas de seguridad para garantizar 
+                el intercambio de información de manera confiable..</p>
+              <img src="../img/quehaceISC.png" alt="Funciones Sistemas">
+            </div>
+            <div class="info-block">
+              <h4>Perfil de egreso</h4>
+              <p>Dentro de las capacidades, los conocimientos y habilidades que debe haber adquirido el estudiante al 
+                finalizar la Ingeniería en Sistemas Computacionales serán:</p>
+              <img src="../img/PERFILDEEGRESOisc.png" alt="Perfil egreso Sistemas">
+            </div>
+            <div class="info-block">
+              <h4>Plan de estudios</h4>
+              <div class="plan-estudios">
+                <div class="semester-tabs" id="sistemas-tabs">
+                  <!-- Las pestañas se generarán con JavaScript -->
+                </div>
+                <div class="semester-contents" id="sistemas-contents">
+                  <!-- Los contenidos se generarán con JavaScript -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carrera 4: Contador Público -->
+      <div class="career-card">
+        <img src="../img/principalconta.png" class="career-image" alt="Contador Público">
+        <div class="career-info">
+          <h2 class="career-title">Contador Público</h2>
+          <p class="career-description">El Contador Público tiene una posición indispensable 
+            en cualquier ente económico, la labor de los contadores contribuye a una sana 
+            administración y control y provee información financiera de utilidad para la toma de decisiones..</p>
+          <button class="more-btn">Más información</button>
+          <div class="more-info">
+            <div class="info-block">
+              <h4>¿Cómo se identifica un Contador Publico?</h4>
+              <p>Por su ética profesional, análisis numérico y precisión en informes financieros.</p>
+              <img src="../img/identificacionConta.png" alt="Identificación Contador">
+            </div>
+            <div class="info-block">
+              <h4>¿Qué hace un Contador Publico?</h4>
+              <p>Documenta informes financieros para los clientes.
+                Maneja registros, sistemas y presupuestos contables y financieros.
+                Hace auditorías financieras para sus clientes.
+                Desempeña actividades de administración en inversiones y análisis
+                Asesora a los clientes en materia financiera.</p>
+              <img src="../img/quehaceconta.png" alt="Funciones Contador">
+            </div>
+            <div class="info-block">
+              <h4>Perfil de igreso</h4>
+              <p>El aspirante interesado en cursar la carrera de Contaduría Pública deberá contar con una sólida formación académica 
+                y un conjunto de habilidades que le permitan desenvolverse con éxito en este campo profesional. Los conocimientos, 
+                habilidades y actitudes que se consideran fundamentales para ingresar a esta carrera son:
+                Matemáticas: Capacidad para resolver problemas numéricos, realizar cálculos precisos y comprender conceptos financieros.
+                Estadística: Habilidad para interpretar datos, realizar análisis cuantitativos y tomar decisiones basadas en información estadística.
+                Administración: Comprensión de los procesos organizacionales, gestión empresarial y toma de decisiones estratégicas.
+                Economía: Conocimiento de los principios económicos básicos, tanto a nivel micro como macroeconómico, para entender el entorno empresarial.
+                Informática: Manejo de herramientas tecnológicas y software básico, así como disposición para aprender sistemas especializados 
+                en contabilidad y finanzas</p>
+                <h4>Perfil de Egreso</h4>
+              <img src="../img/PERFILEGRESOcONTA.png" alt="Perfil egreso Contador">
+            </div>
+            <div class="info-block">
+              <h4>Plan de estudios</h4>
+              <div class="plan-estudios">
+                <div class="semester-tabs" id="contador-tabs">
+                  <!-- Las pestañas se generarán con JavaScript -->
+                </div>
+                <div class="semester-contents" id="contador-contents">
+                  <!-- Los contenidos se generarán con JavaScript -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carrera 5: Industrias Alimentarias -->
+      <div class="career-card">
+        <img src="../img/prinIndustrias.png" class="career-image" alt="Ingeniería en Industrias Alimentarias">
+        <div class="career-info">
+          <h2 class="career-title">Ingeniería en Industrias Alimentarias</h2>
+          <p class="career-description">Las nuevas tendencias en la industria alimentaria dirigen a la alimentación inteligente, 
+            aportando al consumidor a protegerse de enfermedades, los profesionistas de la Ingeniería en Industrias Alimentarias son quienes 
+            aportan con sólidos conocimientos científicos y tecnológicos, para desarrollar, mejorar y producir alimentos inocuos e innovadores 
+            que mejoren la calidad de vida.</p>
+          <button class="more-btn">Más información</button>
+          <div class="more-info">
+            <div class="info-block">
+              <h4>¿Cómo se identifica un ingeniero en Industrias Alimentarias?</h4>
+              <p>Por su conocimiento en biotecnología, química y procesos alimentarios.</p>
+              <img src="../img/identificacionindustrias.png" alt="Identificación Alimentos">
+            </div>
+            <div class="info-block">
+              <h4>¿Qué hace un ingeniero en Industrias Alimentarias?</h4>
+              <p>Desarrolla, mejora y produce alimentos inocuos e innovadores; bajo un esquema ético y sustentable 
+                acorde a las necesidades de la sociedad en el ámbito regional, nacional e internacional.
+                Provee soluciones a problemas de la ingeniería y tecnología del procesamiento de alimentos, a través del diseño de experimentos, 
+                el análisis e interpretación de datos estadísticos y modelos matemáticos que permitan el mejoramiento de la calidad de diferentes 
+                productos que ofrezca una organización.Formula, elabora y ejecuta proyectos de inversión pendientes 
+                a fortalecer el desarrollo del sector alimentario.Analiza, evalúa y diseña sistemas productivos alimentarios.
+                Se desempeña en la administración logística y ventas en empresas procesadoras de alimentos, bebidas y aditivos 
+                asi como diseñadoras y constructoras de equipos y sistemas de embalaje y envasado.
+                Innova y desarrolla productos alimentarios.</p>
+              <img src="../img/quehaceindustrias.png" alt="Funciones Alimentos">
+            </div>
+            <div class="info-block">
+              <h4>Perfil de egreso</h4>
+              <p>Dentro de las capacidades, los conocimientos y habilidades que debe haber adquirido el estudiante al 
+                finalizar la Ingeniería en Industrias Alimentarias serán:</p>
+              <img src="../img/egresoindustrias.png" alt="Perfil egreso Alimentos">
+            </div>
+            <div class="info-block">
+              <h4>Plan de estudios</h4>
+              <div class="plan-estudios">
+                <div class="semester-tabs" id="alimentos-tabs">
+                  <!-- Las pestañas se generarán con JavaScript -->
+                </div>
+                <div class="semester-contents" id="alimentos-contents">
+                  <!-- Los contenidos se generarán con JavaScript -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+   <!-- Carrera 6: Ingeneria en Electromecanica -->
+      <div class="career-card">
+        <img src="../img/principlaElectro.png" class="career-image" alt="Ingeniería en Electromecanica">
+        <div class="career-info">
+          <h2 class="career-title">Ingeniería en Electromecanica</h2>
+          <p class="career-description">La Ingeniería en ELECTRO ... es una de las ciencias que más ramas 
+            y divisiones posee, por lo que mantiene un amplio campo laboral y es catalogada como una 
+            de las ingenierías con mayor demanda en el mundo del comercio.</p>
+          <button class="more-btn">Más información</button>
+          <div class="more-info">
+            <div class="info-block">
+              <h4>¿Cómo se identifica un ingeniero en Electromecanica?</h4>
+              <img src="../img/identifcacionElectro.png" alt="Identificación Electromecanica">
+            </div>
+            <div class="info-block">
+              <h4>¿Qué hace un ingeniero en Electromecanica?</h4>
+              <p>El ingeniero electromecánico es un profesional preparado para desarrollar concapacidad, 
+                trabajos técnicos involucrados en el ámbito de los sistemas mecánicos, eléctricos, térmicos, hidráulicos, 
+                electrónicos e instalaciones en general.Construye y diseña nuevas máquinarias
+                Dirige proyectos para mejorar la eficiencia de fabricación y producción.
+                Comprende los mecanismos internos de las máquinas de ensamblaje robótico.</p>
+              <img src="../img/QueHaceElectro.png" alt="Funciones Electromecanica">
+            </div>
+            <div class="info-block">
+              <h4>Perfil de egreso</h4>
+              <p>Dentro de las capacidades, los conocimientos y habilidades que debe haber 
+                adquirido el estudiante al finalizar la Ingeniería en Administración serán:</p>
+              <img src="../img/perfilEgresoElectro.png" alt="Perfil egreso Electromecanica">
+            </div>
+            <div class="info-block">
+              <h4>Plan de estudios</h4>
+              <div class="plan-estudios">
+                <div class="semester-tabs" id="electromecanica-tabs">
+                  <!-- Las pestañas se generarán con JavaScript -->
+                </div>
+                <div class="semester-contents" id="electromecanica-contents">
+                  <!-- Los contenidos se generarán con JavaScript -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <footer>
+    <p>© 2024 Tecnológico Nacional de México - Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    // Datos de materias por carrera y semestre
+    const materiasPorCarrera = {
+      'gestion': [
+        ['Fundamentos de Investigacion', 'Calculo Diferencial', 'Desarrollo Humano', 'Fundamentos de Gestion Empresarial', 'Fundamentos de Fisica', 'Fundamentos de Quimica'],
+        ['Software de Aplicacion Ejecutivo', 'Calculo Integral', 'Contabilidad Orientada a los Negocios', 'Dinamica Social', 'Taller de Etica', 'Legislacion Laboral'],
+        ['Marco Legal de las Organizaciones', 'Probabilidad y Estadstica Descriptiva', 'Costos Empresariales', 'Habilidades Directivas I', 'Economia Empresarial', 'Algebra Lineal'],
+        ['Ingenieria Economica', 'Estadisticas Inferencial I', 'Instrumentos de Presupuestacion Empresarial', 'Habilidades Directivas II', 'Entrono Macroeconomico', 'Investigacion de Operaciones'],
+        ['Finanzas de la Organizacion', 'Estadisticas Inferencial II', 'Ingenieria de Procesos', 'Gestion del Capital Humano', 'Taller de Investigacion I', 'Mercadotecnia'],
+        ['Administracion de la Salud y Seguridad Ocupacional', 'El Emprendedor y la Innovacion', 'Gestion de la Produccion I', 'Diseño Organizacional', 'Taller de Investigacion II', 'Sistemas de Informacion de la Mercadotecnia'],
+        ['Calidad Aplicada a la Gestion Empresarial', 'Plan de Negocios', 'Gestion de la Produccion II', 'Gestion Estrategica', 'Desarrollo Sustentable','Mercadotecnia Electronica'],
+        ['Cadena de Suministros', 'Materias de Especialidad'],
+        ['Control estadistico de la Calidad', 'Ergonomia', 'Gestion de los sistemas de calidad', 'Mejoramiento continuo', 'Relaciones industriales'],
+        ['Residencia Profesional']
+      ],
+      'admin': [
+        ['Taller de administracion I', 'Tecnologias de la informacion', 'Contabilidad aplicada a la ingenieria', 'Dinamica social', 'Fundamentos de investigacion', 'Calculo diferencial'],
+        ['Taller de administracion II', 'Tic´s aplicadas a la administracion', 'Contabilidad administrativa', 'Comportamiento organizacional', 'Taller de etica', 'Calculo integral'],
+        ['Contabilidad Financiera II', 'Mercadotecnia', 'Matematicas Financieras', 'Gestion del Talento Humano', 'Derecho Laboral y Seguridad Social','Estadisticas Administrativas II', 'Taller de Informatica I'],
+        ['Contabilidad de Sociedades', 'Sistemas de Costos Historicos', 'Microeconomia', 'Derecho Tributario', 'Analisis e Interpretacion de Estados Financieros', 'Taller de Investigacion I', 'Desarrollo Sustentable'],
+        ['Contabilidad Avanzada', 'Sistemas de Costos Predeterminados', 'Macroeconomia', 'Impuestos Personas Morales', 'Fundamentos de Auditoria', 'Taller de Investigacion II', 'Administracion de la Produccion y de las Operaciones'],
+        ['Contabilidad Internacional', 'Gestion y toma de decisiones', 'Admistracion Estrategica', 'Impuestos Personas Fisicas', 'Auditoria para efectos Fiscales', 'Economia Internacional', 'Planeacion Financiera'],
+        ['Seminario de Contudaria', 'Elaboracion y evaluacion de proyectos de inversion', 'Otros Impuestos y contribuciones', 'Auditoria para efectos fiscales', 'Taller de Informatica II', 'Alternativas de Inversion y Financiamiento'],
+        ['Plan de negocios', 'Auditoria administrativa', 'Consultoria', 'Gestion estrategica', 'Tramites legales y gestion de financiamiento'],
+        ['Taller de relaciones publicas', 'Taller de destrezas directas', 'Seminario de cultura y desarrollo', 'Mercadotecnica estrategica', 'Seminario de gestion estrategica de capital humano'],
+        ['Residencia Profesional']
+      ],
+      'sistemas': [
+        ['Calculo Diferencial', 'Fundamentos de Programacion', 'Taller de Etica', 'Matematicas Discretas', 'Taller de Admistracion', 'Fundamentos de Investigacion'],
+        ['Calculo Integral','Programación Orientada a Objetos', 'Contabilidad Financiera', 'Quimica', 'Algebra Linea', 'Probabilidad y Estadistica'],
+        ['Calculo Vectorial', 'Estructura de Datos', 'Cultura Empresarial', 'Investigacion de Operaciones', 'Desarrollo Sustentable', 'Fisica General'],
+        ['Ecuaciones Diferenciales', 'Metodos Numericos', 'Matematicas Financieras', 'Topicos Avanzados de Programacion', 'Fundamentos de Bases de Datos', 'Simulacion'],
+        ['Graficacion', 'Fundamentos de Telecomunicaciones', 'Sistemas Operativos', 'Taller de Bases de Datos ', 'Fundamentos de INgenieria de Software', 'Arquitectura de Computadoras'],
+        ['Lenguajes y AUTOMATAS I', 'Redes de Computadoras', 'Taller de Sistemas Operativos', 'Admistracion de Bases de Datos', 'Ingenieria de Software', 'Lenguajes de Interfaz'],
+        ['Lenguajes y Automatas II', 'Conmutacion y Enrutamiento de Redes de Datos', 'Taller de Investigcion I', 'Gestion de Proyectos de Software', 'Sistemas Programables', 'Desarrollo Agil de Software'],
+        ['Programacion Logica y Funcional', 'Administracion de Redes', 'Taller de Investigacion II', 'Programacion Web', 'Arquitectura y Diseño de Software'],
+        ['DevOps', 'Inteligencia Artificial', 'Frameworks Web'],
+        ['Residencia Profesional']
+      ],
+      'contador': [
+        ['Intro. a la Contabilidad Financiera', 'Administración', 'Álgebra Lineal', 'Fundamentos de Derecho', 'Desarrollo Humano', 'Fundamentos de Investigación'],
+        ['Contabilidad Financiera I', 'Taller de Ética', 'Cálculo Diferencial e Integral', 'Derecho Mercantil', 'Dinámica Social', 'Estadística Administrativa I', 'Comunicación Humana'],
+        ['Contabilidad Financiera II', 'Mercadotecnia', 'Matemáticas Financieras', 'Gestión del Talento Humano', 'Derecho Laboral y Seguridad Social', 'Estadística Administrativa II', 'Taller de Informática I'],
+        ['Contabilidad de Sociedades', 'Sistemas de Costos Históricos', 'Microeconomía', 'Derecho Tributario', 'Análisis e Interpretación de Estados Financieros', 'Taller de Investigación I', 'Desarrollo Sustentable'],
+        ['Contabilidad Avanzada', 'Sistemas de Costos Predeterminados', 'Macroeconomía', 'Impuestos Personas Morales', 'Fundamentos de Auditoría', 'Taller de Investigación II', 'Administración de la Producción y de las Operaciones'],
+        ['Contabilidad Internacional', 'Gestión y Toma de Decisiones', 'Administración Estratégica', 'Impuestos Personas Físicas', 'Auditoría para efectos Fiscales', 'Economía Internacional', 'Planeación Financiera'],
+        ['Seminario de Contaduría', 'Elaboración y Evaluación de Proyectos de Inversión', 'Otros Impuestos y Contribuciones', 'Auditoría para efectos fiscales', 'Taller de Informática II', 'Alternativas de Inversión y Financiamiento'],
+        ['Seminario de Impuestos', 'Finanzas Corporativas', 'Seguridad y Prevención Social', 'Seminario de Contabilidad Electrónica', 'Seminario de Auditoría'],
+        ['Residencia Profesional']
+      ],
+      'alimentos': [
+        ['Química General', 'Matemáticas I', 'Biología', 'Informática I', 'Inglés I'], 
+        ['Química Orgánica', 'Matemáticas II', 'Microbiología', 'Informática II', 'Inglés II'],
+        ['Bioquímica', 'Estadística', 'Operaciones Unitarias', 'Análisis de Alimentos', 'Inglés III'],
+        ['Tecnología de Alimentos', 'Ingeniería de Procesos', 'Conservación de Alimentos', 'Control de Calidad', 'Inglés IV'],
+        ['Procesamiento de Lácteos', 'Procesamiento de Cárnicos', 'Biotecnología Alimentaria', 'Envasado de Alimentos', 'Inglés V'],
+        ['Procesamiento de Frutas y Verduras', 'Procesamiento de Cereales', 'Desarrollo de Nuevos Productos', 'Gestión Ambiental', 'Inglés VI'],
+        ['Toxicología de Alimentos', 'Normatividad Alimentaria', 'Automatización de Procesos', 'Ética Profesional', 'Inglés VII'],
+        ['Innovación Alimentaria', 'Seguridad Alimentaria', 'Optativa I', 'Seminario de Titulación I', 'Inglés VIII'],
+        ['Gestión de Calidad', 'Logística Alimentaria', 'Optativa II', 'Seminario de Titulación II', 'Inglés IX'],
+        ['Residencia Profesional']
+      ],
+      'electromecanica': [
+        ['Taller de Ética', 'Cálculo Diferencial', 'Introducción a la Programación', 'Desarrollo Sustentable', 'Química', 'Fundamentos de Investigación'],
+        ['Estadística', 'Cálculo Integral', 'Álgebra Lineal', 'Metrología y Normalización', 'Tecnología de los Materiales', 'Dibujo Electromecánico'],
+        ['Dinámica', 'Cálculo Vectorial', 'Procesos de Manufactura', 'Electricidad y Magnetismo', 'Mecánica de Materiales', 'Probabilidad y Estadística'],
+        ['Análisis y Síntesis de Mecanismos', 'Ecuaciones Diferenciales', 'Termodinámica', 'Análisis de Circuitos Eléctricos de CD', 'Mecánica de Fluidos', 'Electrónica Analógica'],
+        ['Diseño de Elementos de Máquinas', 'Diseño e Ingeniería Asistido por Computadora', 'Transferencia de Calor', 'Análisis de Circuitos Eléctricos de CA', 'Sistemas y Máquinas de Fluidos', 'Electrónica Digital'],
+        ['Máquinas y Equipos Térmicos I', 'Ahorro de Energía', 'Instalaciones Eléctricas', 'Máquinas Eléctricas', 'Administración y Técnicas de Mantenimiento', 'Taller de Investigación I', 'Controladores Lógicos Programables'],
+        ['Máquinas y Equipos Térmicos II', 'Sistemas Eléctricos de Potencia', 'Controles Eléctricos', 'Taller de Investigación II'],
+        ['Refrigeración y Aire Acondicionado', 'Subestaciones Eléctricas', 'Sistemas Hidráulicos y Neumáticos de Potencia', 'Modelado de Sistemas Eléctricos de Potencia', 'Ingeniería de Control Clásico', 'Formulación y Evaluación de Proyectos'],
+        ['Ingenieria de Control Moderno', 'Electronica de Potencial', 'Elecronica Digital Avanzada'],
+        ['Residencia Profesional']
+      ]
+    };
+
+    // Función para generar las pestañas y contenidos del plan de estudios
+    function generarPlanEstudios(carreraId, materias) {
+      const tabsContainer = document.getElementById(`${carreraId}-tabs`);
+      const contentsContainer = document.getElementById(`${carreraId}-contents`);
+      
+      if (!tabsContainer || !contentsContainer) {
+        console.log(`No se encontraron contenedores para: ${carreraId}`);
+        return;
+      }
+      
+      // Limpiar contenedores
+      tabsContainer.innerHTML = '';
+      contentsContainer.innerHTML = '';
+      
+      // Generar pestañas y contenidos para cada semestre
+      for (let i = 0; i < materias.length; i++) {
+        const semestre = i + 1;
+        
+        // Crear pestaña
+        const tab = document.createElement('button');
+        tab.className = 'semester-tab' + (i === 0 ? ' active' : '');
+        tab.textContent = `${semestre}º Semestre`;
+        tab.dataset.semester = semestre;
+        tabsContainer.appendChild(tab);
+        
+        // Crear contenido
+        const content = document.createElement('div');
+        content.className = 'semester-content' + (i === 0 ? ' active' : '');
+        content.dataset.semester = semestre;
+        
+        // Crear tabla
+        const table = document.createElement('table');
+        const caption = document.createElement('caption');
+        caption.textContent = `${semestre}º Semestre`;
+        table.appendChild(caption);
+        
+        const thead = document.createElement('thead');
+        const headerRow = document.createElement('tr');
+        const th = document.createElement('th');
+        th.textContent = 'Materias';
+        th.colSpan = 2;
+        headerRow.appendChild(th);
+        thead.appendChild(headerRow);
+        table.appendChild(thead);
+        
+        const tbody = document.createElement('tbody');
+        materias[i].forEach((materia, index) => {
+          const row = document.createElement('tr');
+          const cell1 = document.createElement('td');
+          cell1.textContent = `${index + 1}`;
+          const cell2 = document.createElement('td');
+          cell2.textContent = materia;
+          row.appendChild(cell1);
+          row.appendChild(cell2);
+          tbody.appendChild(row);
+        });
+        
+        table.appendChild(tbody);
+        content.appendChild(table);
+        contentsContainer.appendChild(content);
+      }
+      
+      // Agregar event listeners a las pestañas
+      tabsContainer.querySelectorAll('.semester-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          // Remover clase active de todas las pestañas y contenidos
+          tabsContainer.querySelectorAll('.semester-tab').forEach(t => t.classList.remove('active'));
+          contentsContainer.querySelectorAll('.semester-content').forEach(c => c.classList.remove('active'));
+          
+          // Agregar clase active a la pestaña y contenido seleccionados
+          tab.classList.add('active');
+          const semester = tab.dataset.semester;
+          const targetContent = contentsContainer.querySelector(`.semester-content[data-semester="${semester}"]`);
+          if (targetContent) {
+            targetContent.classList.add('active');
+          }
+        });
+      });
+    }
+
+    // Inicializar cuando el DOM esté completamente cargado
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('DOM cargado, inicializando...');
+      
+      // Generar planes de estudio para cada carrera
+      for (const carrera in materiasPorCarrera) {
+        generarPlanEstudios(carrera, materiasPorCarrera[carrera]);
+      }
+      
+      // Configurar los botones de más información
+      const moreButtons = document.querySelectorAll('.more-btn');
+      console.log(`Encontrados ${moreButtons.length} botones de más información`);
+      
+      moreButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const info = this.nextElementSibling;
+          console.log('Botón clickeado, información:', info);
+          if (info.style.display === 'block') {
+            info.style.display = 'none';
+          } else {
+            info.style.display = 'block';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
